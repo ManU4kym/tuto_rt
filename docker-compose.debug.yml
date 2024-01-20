@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  tutort:
+    image: tutort
+    build:
+      context: .
+      dockerfile: ./Dockerfile

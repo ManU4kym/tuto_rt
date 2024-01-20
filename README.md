@@ -1,16 +1,33 @@
 # tuto_rt
 
-A new Flutter project.
+# Flutter Onboarding Screen Project
+
+## Overview
+
+This Flutter project demonstrates a simple onboarding screen with loading animations. It is part of my learning journey as I explore Flutter and build various UI components.
+
+## Features
+
+- Onboarding screen with loading animations
+
+
+## Screenshots
+
+![Screenshot 1](screenshot1.png)
+
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Follow the steps below to set up and run the project on your local machine.
 
-A few resources to get you started if this is your first Flutter project:
+### Prerequisites
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- Flutter installed on your machine
+- An IDE (such as VSCode or Android Studio)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   https://github.com/ManU4kym/tuto_rt.git

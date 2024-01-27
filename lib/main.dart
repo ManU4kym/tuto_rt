@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:tuto_rt/widget.dart';
 
 void main() => runApp(const TestApp());
 
@@ -7,9 +9,14 @@ class TestApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(
+      const SystemUiOverlayStyle(
+          statusBarColor: Colors.transparent,
+          systemNavigationBarColor: Colors.transparent),
+    );
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: TestS(),
+      home: WidgetPage(),
     );
   }
 }
@@ -22,7 +29,7 @@ class TestS extends StatefulWidget {
 }
 
 class _TestSState extends State<TestS> {
-  bool isLoading = true;
+  bool isLoading = false;
 
   @override
   Widget build(BuildContext context) {
@@ -112,6 +119,4 @@ class _TestSState extends State<TestS> {
           ])),
     );
   }
-
-
 }

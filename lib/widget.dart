@@ -7,7 +7,7 @@ class WidgetPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.purple,
-      appBar: AppBar(title: const Text("Flutter"), actions: const [
+      appBar: AppBar(title: const Text("Tutorial"), actions: const [
         Padding(
           padding: EdgeInsets.only(right: 20),
           child: Icon(Icons.info),
@@ -80,10 +80,14 @@ class WidgetPage extends StatelessWidget {
           ],
         ),
       ),
-      body: Center(
-          child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-        Text("Wow nice book"),
-      ])),
+      body: LayoutBuilder(
+        builder: (BuildContext context, BoxConstraints sizes) {
+          if(sizes.maxWidth < 500){
+            return const ListData();
+          }
+          return const GridData();
+        },
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           showDialog(
@@ -114,5 +118,39 @@ class WidgetPage extends StatelessWidget {
         child: const Icon(Icons.add),
       ),
     );
+  }
+}
+class ListData extends StatelessWidget {
+  const ListData({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+        itemCount: 100,
+        itemBuilder: (context, id) {
+          return ListTile(
+            leading: const Icon(Icons.add_box),
+            title: Text("Item $id"),
+          );
+        }
+    );
+  }
+}
+class GridData extends StatelessWidget {
+  const GridData({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return  GridView.count(
+        crossAxisCount: 2,
+        children: List.generate(100, (index) {
+      return Center(
+          child: ListTile(
+            leading: const Icon(Icons.add_box),
+            title: Text("Item $index"),
+              ),
+       );
+    }
+    ));
   }
 }
